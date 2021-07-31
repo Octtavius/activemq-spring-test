@@ -13,7 +13,7 @@ public class MyListener {
     @JmsListener(destination = "${springjms.myQueue}")
     public void receive(ActiveMQObjectMessage message) throws JMSException {
 
-        MyMessage m = (MyMessage) message.getObject();
-        System.out.println("message received ---> " + m);
+        Book m = (Book) message.getObject();
+        System.out.println("book received ---> " + m);
     }
 }

@@ -12,8 +12,8 @@ class ActivemqTut1ApplicationTests {
 
 	@Test
 	void testSendAndReceive() {
-		MyMessage mess1 = new MyMessage("Message 1", "Somemessage");
-		messageSender.send(mess1);
+		Book book = new Book("My Book", "Octavian Morcov");
+		messageSender.send(book);
 	}
 
 }

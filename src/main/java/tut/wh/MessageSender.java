@@ -19,13 +19,13 @@ public class MessageSender {
     @Value("${springjms.myQueue}")
     private String queue;
 
-    public void send(MyMessage message) {
-        System.out.println("Sending message ---> " + message);
+    public void send(Book book) {
+        System.out.println("Sending the book ---> " + book);
         MessageCreator mc = new MessageCreator() {
             @Override
             public Message createMessage(Session session) throws JMSException {
                 ObjectMessage objectMessage = session.createObjectMessage();
-                objectMessage.setObject(message);
+                objectMessage.setObject(book);
                 return objectMessage;
             }
         };
